@@ -1,0 +1,33 @@
+{
+  "sidebarHtml": "<div class=\"w-64 bg-evernote-sidebar text-white flex flex-col h-full\"><div class=\"p-4 border-b border-gray-700\"><div class=\"flex items-center justify-between mb-1\"><span class=\"font-semibold cursor-pointer hover:text-evernote-green truncate\">Tung</span><button class=\"text-sm text-gray-400 hover:text-white flex-shrink-0 ml-2\">Logout</button></div><div class=\"flex items-center gap-2 mb-3\"><span class=\"text-xs text-gray-400 truncate\">Tung's Workspace</span><span class=\"text-xs px-1.5 py-0.5 rounded flex-shrink-0 bg-gray-600 text-gray-300\">FREE</span></div><button class=\"w-full bg-evernote-green text-white py-2 rounded hover:bg-green-600 transition\">+ New Note</button></div><nav class=\"flex-1 overflow-y-auto\"><div class=\"px-4 py-2 cursor-pointer hover:bg-evernote-hover bg-evernote-hover text-evernote-green\">📝 All Notes</div><div class=\"px-4 py-2 cursor-pointer hover:bg-evernote-hover text-gray-300\">👥 Shared with me</div><div class=\"px-4 py-2 cursor-pointer hover:bg-evernote-hover text-gray-300\">🗑️ Trash</div><div class=\"mt-4\"><div class=\"px-4 py-2 text-gray-400 text-sm flex justify-between cursor-pointer\"><span>NOTEBOOKS</span><span>▼</span></div><div class=\"px-4 py-2 flex gap-2\"><input placeholder=\"New notebook\" class=\"flex-1 bg-evernote-dark text-white px-2 py-1 rounded text-sm\" value=\"\"><button class=\"text-evernote-green\">+</button></div></div><div class=\"mt-4\"><div class=\"px-4 py-2 text-gray-400 text-sm flex justify-between cursor-pointer\"><span>TAGS</span><span>▼</span></div><div class=\"px-4 py-2 flex gap-2\"><input placeholder=\"New tag\" class=\"flex-1 bg-evernote-dark text-white px-2 py-1 rounded text-sm\" value=\"\"><button class=\"text-evernote-green\">+</button></div></div><div class=\"mt-4 px-4\"><input type=\"file\" accept=\".enex\" class=\"hidden\"><button class=\"w-full text-left px-4 py-2 text-gray-300 hover:bg-evernote-hover rounded text-sm\">📥 Import from Evernote</button></div></nav></div>",
+  "noteListHtml": "<button class=\"md:hidden fixed top-4 left-4 z-50 bg-evernote-green text-white p-2 rounded-lg shadow-lg\" style=\"margin-left: 0px;\">☰</button>\n---\n<div class=\"w-64 bg-evernote-sidebar text-white flex flex-col h-full\"><div class=\"p-4 border-b border-gray-700\"><div class=\"flex items-center justify-between mb-1\"><span class=\"font-semibold cursor-pointer hover:text-evernote-green truncate\">Tung</span><button class=\"text-sm text-gray-400 hover:text-white flex-shrink-0 ml-2\">Logout</button></div><div class=\"flex items-center gap-2 mb-3\"><span class=\"text-xs text-gray-400 truncate\">Tung's Workspace</span><span class=\"text-xs px-1.5 py-0.5 rounded flex-shrink-0 bg-gray-600 text-gray-300\">FREE</span></div><button class=\"w-full bg-evernote-green text-white py-2 rounded hover:bg-green-600 transition\">+ New Note</button></div><nav class=\"flex-1 overflow-y-auto\"><div class=\"px-4 py-2 cursor-pointer hover:bg-evernote-hover bg-evernote-hover text-evernote-green\">📝 All Notes</div><div class=\"px-4 py-2 cursor-pointer hover:bg-evernote-hover text-gray-300\">👥 Shared with me</div><div class=\"px-4 py-2 cursor-pointer hover:bg-evernote-hover text-gr\n---\n<span class=\"font-semibold cursor-pointer hover:text-evernote-green truncate\">Tung</span>",
+  "editorInfo": {
+    "found": false
+  },
+  "appLayout": "<body class=\"\">\n  <div class=\"\">\n    <div class=\"min-h-screen bg-gray-100\">\n      <div class=\"bg-evernote-sidebar text-white p-4\">\n        <button class=\"text-gray-300 hover:text-white\"> \"← Back to Notes\"\n      <div class=\"max-w-xl mx-auto py-8 px-4\">\n        <h1 class=\"text-2xl font-bold mb-6\"> \"Profile Settings\"\n        <div class=\"bg-white rounded-lg shadow p-6 mb-6\">\n        <div class=\"bg-white rounded-lg shadow p-6\">\n",
+  "registerData": {
+    "url": "https://note.cozyroad.com/register",
+    "body": "Simplanet Note\n\nCreate your free workspace\n\nCreate Free Account\n\nBy signing up, you agree to our Terms of Service and Privacy Policy.\n\nAlready have an account? Sign in",
+    "inputs": [
+      {
+        "type": "text",
+        "placeholder": "Your name"
+      },
+      {
+        "type": "email",
+        "placeholder": "Work email"
+      },
+      {
+        "type": "password",
+        "placeholder": "Password (min 6 characters)"
+      },
+      {
+        "type": "text",
+        "placeholder": "Workspace name (optional)"
+      }
+    ],
+    "buttons": [
+      "Create Free Account"
+    ]
+  }
+}
