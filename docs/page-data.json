@@ -1,0 +1,146 @@
+[
+  {
+    "url": "https://note.cozyroad.com/",
+    "name": "home-public",
+    "title": "Evernote Clone",
+    "h1": "Your notes,organized and shared",
+    "authRequired": "no",
+    "bodyText": "Simplanet Note\nSign in\nGet started free\nFree to start · No credit card required\nYour notes,\norganized and shared\n\nA modern note-taking workspace for individuals and teams. Write, organize, collaborate, and share — all in one place.\n\nStart for free\nSign in\nSimplanet Note\nWORKSPACE\n📝 All Notes\n👥 Shared\n🗑️ Trash\nNOTEBOOKS\n📓 Work\n📓 Personal\nQ4 Planning\nUpdated just now\nMeeting Notes\nUpdated just now\nProduct Roadmap\nUpdated just now\nIdeas\nUpdated just now\nQ4 Planning\nEverything you need\n\nBuilt f"
+  },
+  {
+    "url": "https://note.cozyroad.com/login",
+    "name": "login",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "no",
+    "bodyText": "Simplanet Note\n\nSign in to your workspace\n\nSign In\n\nDon't have an account? Start for free"
+  },
+  {
+    "url": "https://note.cozyroad.com/",
+    "name": "signup",
+    "title": "Evernote Clone",
+    "h1": "Your notes,organized and shared",
+    "authRequired": "no",
+    "bodyText": "Simplanet Note\nSign in\nGet started free\nFree to start · No credit card required\nYour notes,\norganized and shared\n\nA modern note-taking workspace for individuals and teams. Write, organize, collaborate, and share — all in one place.\n\nStart for free\nSign in\nSimplanet Note\nWORKSPACE\n📝 All Notes\n👥 Shared\n🗑️ Trash\nNOTEBOOKS\n📓 Work\n📓 Personal\nQ4 Planning\nUpdated just now\nMeeting Notes\nUpdated just now\nProduct Roadmap\nUpdated just now\nIdeas\nUpdated just now\nQ4 Planning\nEverything you need\n\nBuilt f"
+  },
+  {
+    "url": "https://note.cozyroad.com/app",
+    "name": "dashboard",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\nNo notes found\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/notes",
+    "name": "/notes",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/note",
+    "name": "/note",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/dashboard",
+    "name": "/dashboard",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/settings",
+    "name": "/settings",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/profile",
+    "name": "/profile",
+    "title": "Evernote Clone",
+    "h1": "Profile Settings",
+    "authRequired": "yes",
+    "bodyText": "← Back to Notes\nProfile Settings\nAccount Info\n\nEmail: nstung@gmail.com\n\nName\nUpdate Profile\nChange Password\nCurrent Password\nNew Password\nChange Password"
+  },
+  {
+    "url": "https://note.cozyroad.com/workspace",
+    "name": "/workspace",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/home",
+    "name": "/home",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/editor",
+    "name": "/editor",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/archive",
+    "name": "/archive",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/trash",
+    "name": "/trash",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/shared",
+    "name": "/shared",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/search",
+    "name": "/search",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/tags",
+    "name": "/tags",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  },
+  {
+    "url": "https://note.cozyroad.com/folders",
+    "name": "/folders",
+    "title": "Evernote Clone",
+    "h1": "",
+    "authRequired": "yes",
+    "bodyText": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+  }
+]

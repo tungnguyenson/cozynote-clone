@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Custom brand colors */
+  --color-evernote-green:   #00a82d;
+  --color-evernote-sidebar: #1a1a1a;
+  --color-evernote-hover:   #2d2d2d;
+  --color-evernote-dark:    #3d3d3d;
+
+  --color-background: #ffffff;
+  --color-foreground: #111827;
+}
+
+body {
+  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+html,
+body {
+  height: 100%;
+}

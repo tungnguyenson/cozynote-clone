@@ -1,0 +1,1707 @@
+{
+  "/": {
+    "url": "https://note.cozyroad.com/",
+    "title": "Evernote Clone",
+    "layout": [
+      "nav (1440x69)",
+      "footer (1440x85)",
+      "section (1152x514)"
+    ],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgba(255, 255, 255, 0.95)",
+      "rgb(0, 168, 45)",
+      "rgb(75, 85, 99)",
+      "rgb(240, 253, 244)",
+      "rgb(17, 24, 39)",
+      "rgb(107, 114, 128)",
+      "rgb(55, 65, 81)",
+      "rgb(31, 41, 55)",
+      "rgb(239, 68, 68)",
+      "rgb(234, 179, 8)",
+      "rgb(34, 197, 94)",
+      "rgb(156, 163, 175)",
+      "rgb(209, 213, 219)",
+      "rgb(26, 26, 46)",
+      "rgba(20, 83, 45, 0.4)",
+      "rgb(229, 231, 235)",
+      "rgb(243, 244, 246)",
+      "rgb(249, 250, 251)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "h1: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 60px",
+      "h2: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 30px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 20px"
+    ],
+    "interactives": {
+      "buttons": [],
+      "links": [
+        {
+          "text": "Sign in",
+          "href": "https://note.cozyroad.com/login"
+        },
+        {
+          "text": "Get started free",
+          "href": "https://note.cozyroad.com/register"
+        },
+        {
+          "text": "Start for free",
+          "href": "https://note.cozyroad.com/register"
+        },
+        {
+          "text": "Sign in",
+          "href": "https://note.cozyroad.com/login"
+        },
+        {
+          "text": "Get started free",
+          "href": "https://note.cozyroad.com/register"
+        },
+        {
+          "text": "Start free trial",
+          "href": "https://note.cozyroad.com/register"
+        },
+        {
+          "text": "Create your free account",
+          "href": "https://note.cozyroad.com/register"
+        },
+        {
+          "text": "Privacy",
+          "href": "https://note.cozyroad.com/#"
+        },
+        {
+          "text": "Terms",
+          "href": "https://note.cozyroad.com/#"
+        },
+        {
+          "text": "Contact",
+          "href": "https://note.cozyroad.com/#"
+        }
+      ],
+      "inputs": []
+    },
+    "components": [
+      "List"
+    ],
+    "classes": [
+      "min-h-screen",
+      "bg-white",
+      "border-b",
+      "sticky",
+      "top-0",
+      "bg-white/95",
+      "backdrop-blur",
+      "z-50",
+      "max-w-6xl",
+      "mx-auto",
+      "px-4",
+      "py-4",
+      "flex",
+      "items-center",
+      "justify-between",
+      "text-xl",
+      "font-bold",
+      "text-evernote-green",
+      "gap-4",
+      "text-gray-600",
+      "hover:text-gray-900",
+      "text-sm",
+      "bg-evernote-green",
+      "text-white",
+      "py-2",
+      "rounded-lg",
+      "hover:bg-green-600",
+      "transition",
+      "py-20",
+      "text-center",
+      "inline-block",
+      "bg-green-50",
+      "px-3",
+      "py-1",
+      "rounded-full",
+      "mb-6",
+      "text-5xl",
+      "md:text-6xl",
+      "text-gray-900",
+      "leading-tight",
+      "text-gray-500",
+      "mb-10",
+      "max-w-2xl",
+      "flex-col",
+      "sm:flex-row",
+      "justify-center",
+      "px-8",
+      "rounded-xl",
+      "text-lg",
+      "font-medium",
+      "border",
+      "border-gray-300",
+      "text-gray-700",
+      "hover:bg-gray-50",
+      "max-w-5xl",
+      "pb-20",
+      "bg-gray-900",
+      "rounded-2xl",
+      "overflow-hidden",
+      "shadow-2xl"
+    ],
+    "text": {
+      "headings": [
+        "H1: Your notes,organized and shared",
+        "H2: Everything you need",
+        "H3: Rich Text Editor",
+        "H3: Notebooks & Tags",
+        "H3: Full-Text Search",
+        "H3: Collaboration",
+        "H3: Public Sharing",
+        "H3: Evernote Import",
+        "H2: Simple pricing",
+        "H2: Ready to get organized?"
+      ],
+      "bodySnippet": "Simplanet Note\nSign in\nGet started free\nFree to start · No credit card required\nYour notes,\norganized and shared\n\nA modern note-taking workspace for individuals and teams. Write, organize, collaborate, and share — all in one place.\n\nStart for free\nSign in\nSimplanet Note\nWORKSPACE\n📝 All Notes\n👥 Shared\n🗑️ Trash\nNOTEBOOKS\n📓 Work\n📓 Personal\nQ4 Planning\nUpdated just now\nMeeting Notes\nUpdated just now\nProduct Roadmap\nUpdated just now\nIdeas\nUpdated just now\nQ4 Planning\nEverything you need\n\nBuilt for people who take notes seriously. Simple enough for personal use, powerful enough for teams.\n\n📝\nRich Text Editor\n\nWrite with a powerful editor supporting headings, lists, code blocks, images, and more.\n\n📓\nNotebooks & Tags\n\nOrganize notes into notebooks and tag them for lightning-fast retrieval.\n"
+    },
+    "cssVars": []
+  },
+  "/login": {
+    "url": "https://note.cozyroad.com/login",
+    "title": "Evernote Clone",
+    "layout": [],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(249, 250, 251)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 168, 45)",
+      "rgb(107, 114, 128)",
+      "rgb(75, 85, 99)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "button: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "input: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px"
+    ],
+    "interactives": {
+      "buttons": [
+        "Sign In"
+      ],
+      "links": [
+        {
+          "text": "Simplanet Note",
+          "href": "https://note.cozyroad.com/"
+        },
+        {
+          "text": "Start for free",
+          "href": "https://note.cozyroad.com/register"
+        }
+      ],
+      "inputs": [
+        {
+          "type": "email",
+          "placeholder": "Email",
+          "name": ""
+        },
+        {
+          "type": "password",
+          "placeholder": "Password",
+          "name": ""
+        }
+      ]
+    },
+    "components": [
+      "Form"
+    ],
+    "classes": [
+      "min-h-screen",
+      "flex",
+      "items-center",
+      "justify-center",
+      "bg-gray-50",
+      "bg-white",
+      "p-8",
+      "rounded-xl",
+      "shadow-sm",
+      "border",
+      "w-full",
+      "max-w-md",
+      "text-center",
+      "mb-8",
+      "text-2xl",
+      "font-bold",
+      "text-evernote-green",
+      "text-gray-500",
+      "mt-2",
+      "space-y-4",
+      "p-3",
+      "rounded-lg",
+      "focus:outline-none",
+      "focus:ring-2",
+      "focus:ring-evernote-green",
+      "bg-evernote-green",
+      "text-white",
+      "hover:bg-green-600",
+      "transition",
+      "disabled:opacity-50",
+      "mt-6",
+      "text-gray-600",
+      "hover:underline",
+      "font-medium"
+    ],
+    "text": {
+      "headings": [],
+      "bodySnippet": "Simplanet Note\n\nSign in to your workspace\n\nSign In\n\nDon't have an account? Start for free"
+    },
+    "cssVars": []
+  },
+  "/app": {
+    "url": "https://note.cozyroad.com/app",
+    "title": "Evernote Clone",
+    "layout": [
+      "nav (256x767)"
+    ],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 168, 45)",
+      "rgb(45, 45, 45)",
+      "rgb(156, 163, 175)",
+      "rgb(75, 85, 99)",
+      "rgb(209, 213, 219)",
+      "rgb(61, 61, 61)",
+      "rgb(26, 26, 26)",
+      "rgb(249, 250, 251)",
+      "rgb(107, 114, 128)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px",
+      "button: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "input: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px"
+    ],
+    "interactives": {
+      "buttons": [
+        "☰",
+        "Logout",
+        "+ New Note",
+        "+",
+        "+",
+        "📥 Import from Evernote"
+      ],
+      "links": [],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "New notebook",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "New tag",
+          "name": ""
+        },
+        {
+          "type": "file",
+          "placeholder": "",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "Search notes...",
+          "name": ""
+        }
+      ]
+    },
+    "components": [
+      "Sidebar"
+    ],
+    "classes": [
+      "flex",
+      "h-screen",
+      "bg-white",
+      "overflow-hidden",
+      "md:hidden",
+      "fixed",
+      "top-4",
+      "left-4",
+      "z-50",
+      "bg-evernote-green",
+      "text-white",
+      "p-2",
+      "rounded-lg",
+      "shadow-lg",
+      "-translate-x-full",
+      "md:translate-x-0",
+      "md:relative",
+      "inset-y-0",
+      "left-0",
+      "z-40",
+      "transition-transform",
+      "duration-300",
+      "ease-in-out",
+      "w-64",
+      "bg-evernote-sidebar",
+      "flex-col",
+      "h-full",
+      "p-4",
+      "border-b",
+      "border-gray-700",
+      "items-center",
+      "justify-between",
+      "mb-1",
+      "font-semibold",
+      "cursor-pointer",
+      "hover:text-evernote-green",
+      "truncate",
+      "text-sm",
+      "text-gray-400",
+      "hover:text-white",
+      "flex-shrink-0",
+      "ml-2",
+      "gap-2",
+      "mb-3",
+      "text-xs",
+      "px-1.5",
+      "py-0.5",
+      "rounded",
+      "bg-gray-600",
+      "text-gray-300",
+      "w-full",
+      "py-2",
+      "hover:bg-green-600",
+      "transition",
+      "flex-1",
+      "overflow-y-auto",
+      "px-4",
+      "hover:bg-evernote-hover",
+      "bg-evernote-hover",
+      "text-evernote-green"
+    ],
+    "text": {
+      "headings": [
+        "H3: Hello World",
+        "H3: Untitled"
+      ],
+      "bodySnippet": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+    },
+    "cssVars": []
+  },
+  "/profile": {
+    "url": "https://note.cozyroad.com/profile",
+    "title": "Evernote Clone",
+    "layout": [],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(243, 244, 246)",
+      "rgb(45, 45, 45)",
+      "rgb(255, 255, 255)",
+      "rgb(209, 213, 219)",
+      "rgb(75, 85, 99)",
+      "rgb(55, 65, 81)",
+      "rgb(0, 168, 45)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "h1: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 24px",
+      "h2: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 18px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "button: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "input: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px"
+    ],
+    "interactives": {
+      "buttons": [
+        "← Back to Notes",
+        "Update Profile",
+        "Change Password"
+      ],
+      "links": [],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "",
+          "name": ""
+        },
+        {
+          "type": "password",
+          "placeholder": "",
+          "name": ""
+        },
+        {
+          "type": "password",
+          "placeholder": "",
+          "name": ""
+        }
+      ]
+    },
+    "components": [
+      "Form",
+      "Sidebar"
+    ],
+    "classes": [
+      "min-h-screen",
+      "bg-gray-100",
+      "bg-evernote-sidebar",
+      "text-white",
+      "p-4",
+      "text-gray-300",
+      "hover:text-white",
+      "max-w-xl",
+      "mx-auto",
+      "py-8",
+      "px-4",
+      "text-2xl",
+      "font-bold",
+      "mb-6",
+      "bg-white",
+      "rounded-lg",
+      "shadow",
+      "p-6",
+      "text-lg",
+      "font-semibold",
+      "mb-4",
+      "text-gray-600",
+      "space-y-4",
+      "block",
+      "text-sm",
+      "font-medium",
+      "text-gray-700",
+      "mb-1",
+      "w-full",
+      "p-3",
+      "border",
+      "rounded",
+      "focus:outline-none",
+      "focus:ring-2",
+      "focus:ring-evernote-green",
+      "bg-evernote-green",
+      "py-2",
+      "hover:bg-green-600"
+    ],
+    "text": {
+      "headings": [
+        "H1: Profile Settings",
+        "H2: Account Info",
+        "H2: Change Password"
+      ],
+      "bodySnippet": "← Back to Notes\nProfile Settings\nAccount Info\n\nEmail: nstung@gmail.com\n\nName\nUpdate Profile\nChange Password\nCurrent Password\nNew Password\nChange Password"
+    },
+    "cssVars": []
+  },
+  "/settings": {
+    "url": "https://note.cozyroad.com/app",
+    "title": "Evernote Clone",
+    "layout": [
+      "nav (256x767)"
+    ],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 168, 45)",
+      "rgb(45, 45, 45)",
+      "rgb(156, 163, 175)",
+      "rgb(75, 85, 99)",
+      "rgb(209, 213, 219)",
+      "rgb(61, 61, 61)",
+      "rgb(26, 26, 26)",
+      "rgb(249, 250, 251)",
+      "rgb(107, 114, 128)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px",
+      "button: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "input: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px"
+    ],
+    "interactives": {
+      "buttons": [
+        "☰",
+        "Logout",
+        "+ New Note",
+        "+",
+        "+",
+        "📥 Import from Evernote"
+      ],
+      "links": [],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "New notebook",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "New tag",
+          "name": ""
+        },
+        {
+          "type": "file",
+          "placeholder": "",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "Search notes...",
+          "name": ""
+        }
+      ]
+    },
+    "components": [
+      "Sidebar"
+    ],
+    "classes": [
+      "flex",
+      "h-screen",
+      "bg-white",
+      "overflow-hidden",
+      "md:hidden",
+      "fixed",
+      "top-4",
+      "left-4",
+      "z-50",
+      "bg-evernote-green",
+      "text-white",
+      "p-2",
+      "rounded-lg",
+      "shadow-lg",
+      "-translate-x-full",
+      "md:translate-x-0",
+      "md:relative",
+      "inset-y-0",
+      "left-0",
+      "z-40",
+      "transition-transform",
+      "duration-300",
+      "ease-in-out",
+      "w-64",
+      "bg-evernote-sidebar",
+      "flex-col",
+      "h-full",
+      "p-4",
+      "border-b",
+      "border-gray-700",
+      "items-center",
+      "justify-between",
+      "mb-1",
+      "font-semibold",
+      "cursor-pointer",
+      "hover:text-evernote-green",
+      "truncate",
+      "text-sm",
+      "text-gray-400",
+      "hover:text-white",
+      "flex-shrink-0",
+      "ml-2",
+      "gap-2",
+      "mb-3",
+      "text-xs",
+      "px-1.5",
+      "py-0.5",
+      "rounded",
+      "bg-gray-600",
+      "text-gray-300",
+      "w-full",
+      "py-2",
+      "hover:bg-green-600",
+      "transition",
+      "flex-1",
+      "overflow-y-auto",
+      "px-4",
+      "hover:bg-evernote-hover",
+      "bg-evernote-hover",
+      "text-evernote-green"
+    ],
+    "text": {
+      "headings": [
+        "H3: Hello World",
+        "H3: Untitled"
+      ],
+      "bodySnippet": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+    },
+    "cssVars": []
+  },
+  "/notes": {
+    "url": "https://note.cozyroad.com/app",
+    "title": "Evernote Clone",
+    "layout": [
+      "nav (256x767)"
+    ],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 168, 45)",
+      "rgb(45, 45, 45)",
+      "rgb(156, 163, 175)",
+      "rgb(75, 85, 99)",
+      "rgb(209, 213, 219)",
+      "rgb(61, 61, 61)",
+      "rgb(26, 26, 26)",
+      "rgb(249, 250, 251)",
+      "rgb(107, 114, 128)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px",
+      "button: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "input: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px"
+    ],
+    "interactives": {
+      "buttons": [
+        "☰",
+        "Logout",
+        "+ New Note",
+        "+",
+        "+",
+        "📥 Import from Evernote"
+      ],
+      "links": [],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "New notebook",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "New tag",
+          "name": ""
+        },
+        {
+          "type": "file",
+          "placeholder": "",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "Search notes...",
+          "name": ""
+        }
+      ]
+    },
+    "components": [
+      "Sidebar"
+    ],
+    "classes": [
+      "flex",
+      "h-screen",
+      "bg-white",
+      "overflow-hidden",
+      "md:hidden",
+      "fixed",
+      "top-4",
+      "left-4",
+      "z-50",
+      "bg-evernote-green",
+      "text-white",
+      "p-2",
+      "rounded-lg",
+      "shadow-lg",
+      "-translate-x-full",
+      "md:translate-x-0",
+      "md:relative",
+      "inset-y-0",
+      "left-0",
+      "z-40",
+      "transition-transform",
+      "duration-300",
+      "ease-in-out",
+      "w-64",
+      "bg-evernote-sidebar",
+      "flex-col",
+      "h-full",
+      "p-4",
+      "border-b",
+      "border-gray-700",
+      "items-center",
+      "justify-between",
+      "mb-1",
+      "font-semibold",
+      "cursor-pointer",
+      "hover:text-evernote-green",
+      "truncate",
+      "text-sm",
+      "text-gray-400",
+      "hover:text-white",
+      "flex-shrink-0",
+      "ml-2",
+      "gap-2",
+      "mb-3",
+      "text-xs",
+      "px-1.5",
+      "py-0.5",
+      "rounded",
+      "bg-gray-600",
+      "text-gray-300",
+      "w-full",
+      "py-2",
+      "hover:bg-green-600",
+      "transition",
+      "flex-1",
+      "overflow-y-auto",
+      "px-4",
+      "hover:bg-evernote-hover",
+      "bg-evernote-hover",
+      "text-evernote-green"
+    ],
+    "text": {
+      "headings": [
+        "H3: Hello World",
+        "H3: Untitled"
+      ],
+      "bodySnippet": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+    },
+    "cssVars": []
+  },
+  "/note": {
+    "url": "https://note.cozyroad.com/app",
+    "title": "Evernote Clone",
+    "layout": [
+      "nav (256x767)"
+    ],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 168, 45)",
+      "rgb(45, 45, 45)",
+      "rgb(156, 163, 175)",
+      "rgb(75, 85, 99)",
+      "rgb(209, 213, 219)",
+      "rgb(61, 61, 61)",
+      "rgb(26, 26, 26)",
+      "rgb(249, 250, 251)",
+      "rgb(107, 114, 128)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px",
+      "button: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "input: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px"
+    ],
+    "interactives": {
+      "buttons": [
+        "☰",
+        "Logout",
+        "+ New Note",
+        "+",
+        "+",
+        "📥 Import from Evernote"
+      ],
+      "links": [],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "New notebook",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "New tag",
+          "name": ""
+        },
+        {
+          "type": "file",
+          "placeholder": "",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "Search notes...",
+          "name": ""
+        }
+      ]
+    },
+    "components": [
+      "Sidebar"
+    ],
+    "classes": [
+      "flex",
+      "h-screen",
+      "bg-white",
+      "overflow-hidden",
+      "md:hidden",
+      "fixed",
+      "top-4",
+      "left-4",
+      "z-50",
+      "bg-evernote-green",
+      "text-white",
+      "p-2",
+      "rounded-lg",
+      "shadow-lg",
+      "-translate-x-full",
+      "md:translate-x-0",
+      "md:relative",
+      "inset-y-0",
+      "left-0",
+      "z-40",
+      "transition-transform",
+      "duration-300",
+      "ease-in-out",
+      "w-64",
+      "bg-evernote-sidebar",
+      "flex-col",
+      "h-full",
+      "p-4",
+      "border-b",
+      "border-gray-700",
+      "items-center",
+      "justify-between",
+      "mb-1",
+      "font-semibold",
+      "cursor-pointer",
+      "hover:text-evernote-green",
+      "truncate",
+      "text-sm",
+      "text-gray-400",
+      "hover:text-white",
+      "flex-shrink-0",
+      "ml-2",
+      "gap-2",
+      "mb-3",
+      "text-xs",
+      "px-1.5",
+      "py-0.5",
+      "rounded",
+      "bg-gray-600",
+      "text-gray-300",
+      "w-full",
+      "py-2",
+      "hover:bg-green-600",
+      "transition",
+      "flex-1",
+      "overflow-y-auto",
+      "px-4",
+      "hover:bg-evernote-hover",
+      "bg-evernote-hover",
+      "text-evernote-green"
+    ],
+    "text": {
+      "headings": [
+        "H3: Hello World",
+        "H3: Untitled"
+      ],
+      "bodySnippet": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+    },
+    "cssVars": []
+  },
+  "/search": {
+    "url": "https://note.cozyroad.com/app",
+    "title": "Evernote Clone",
+    "layout": [
+      "nav (256x767)"
+    ],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 168, 45)",
+      "rgb(45, 45, 45)",
+      "rgb(156, 163, 175)",
+      "rgb(75, 85, 99)",
+      "rgb(209, 213, 219)",
+      "rgb(61, 61, 61)",
+      "rgb(26, 26, 26)",
+      "rgb(249, 250, 251)",
+      "rgb(107, 114, 128)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px",
+      "button: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "input: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px"
+    ],
+    "interactives": {
+      "buttons": [
+        "☰",
+        "Logout",
+        "+ New Note",
+        "+",
+        "+",
+        "📥 Import from Evernote"
+      ],
+      "links": [],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "New notebook",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "New tag",
+          "name": ""
+        },
+        {
+          "type": "file",
+          "placeholder": "",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "Search notes...",
+          "name": ""
+        }
+      ]
+    },
+    "components": [
+      "Sidebar"
+    ],
+    "classes": [
+      "flex",
+      "h-screen",
+      "bg-white",
+      "overflow-hidden",
+      "md:hidden",
+      "fixed",
+      "top-4",
+      "left-4",
+      "z-50",
+      "bg-evernote-green",
+      "text-white",
+      "p-2",
+      "rounded-lg",
+      "shadow-lg",
+      "-translate-x-full",
+      "md:translate-x-0",
+      "md:relative",
+      "inset-y-0",
+      "left-0",
+      "z-40",
+      "transition-transform",
+      "duration-300",
+      "ease-in-out",
+      "w-64",
+      "bg-evernote-sidebar",
+      "flex-col",
+      "h-full",
+      "p-4",
+      "border-b",
+      "border-gray-700",
+      "items-center",
+      "justify-between",
+      "mb-1",
+      "font-semibold",
+      "cursor-pointer",
+      "hover:text-evernote-green",
+      "truncate",
+      "text-sm",
+      "text-gray-400",
+      "hover:text-white",
+      "flex-shrink-0",
+      "ml-2",
+      "gap-2",
+      "mb-3",
+      "text-xs",
+      "px-1.5",
+      "py-0.5",
+      "rounded",
+      "bg-gray-600",
+      "text-gray-300",
+      "w-full",
+      "py-2",
+      "hover:bg-green-600",
+      "transition",
+      "flex-1",
+      "overflow-y-auto",
+      "px-4",
+      "hover:bg-evernote-hover",
+      "bg-evernote-hover",
+      "text-evernote-green"
+    ],
+    "text": {
+      "headings": [
+        "H3: Hello World",
+        "H3: Untitled"
+      ],
+      "bodySnippet": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+    },
+    "cssVars": []
+  },
+  "/trash": {
+    "url": "https://note.cozyroad.com/app",
+    "title": "Evernote Clone",
+    "layout": [
+      "nav (256x767)"
+    ],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 168, 45)",
+      "rgb(45, 45, 45)",
+      "rgb(156, 163, 175)",
+      "rgb(75, 85, 99)",
+      "rgb(209, 213, 219)",
+      "rgb(61, 61, 61)",
+      "rgb(26, 26, 26)",
+      "rgb(249, 250, 251)",
+      "rgb(107, 114, 128)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px",
+      "button: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "input: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px"
+    ],
+    "interactives": {
+      "buttons": [
+        "☰",
+        "Logout",
+        "+ New Note",
+        "+",
+        "+",
+        "📥 Import from Evernote"
+      ],
+      "links": [],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "New notebook",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "New tag",
+          "name": ""
+        },
+        {
+          "type": "file",
+          "placeholder": "",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "Search notes...",
+          "name": ""
+        }
+      ]
+    },
+    "components": [
+      "Sidebar"
+    ],
+    "classes": [
+      "flex",
+      "h-screen",
+      "bg-white",
+      "overflow-hidden",
+      "md:hidden",
+      "fixed",
+      "top-4",
+      "left-4",
+      "z-50",
+      "bg-evernote-green",
+      "text-white",
+      "p-2",
+      "rounded-lg",
+      "shadow-lg",
+      "-translate-x-full",
+      "md:translate-x-0",
+      "md:relative",
+      "inset-y-0",
+      "left-0",
+      "z-40",
+      "transition-transform",
+      "duration-300",
+      "ease-in-out",
+      "w-64",
+      "bg-evernote-sidebar",
+      "flex-col",
+      "h-full",
+      "p-4",
+      "border-b",
+      "border-gray-700",
+      "items-center",
+      "justify-between",
+      "mb-1",
+      "font-semibold",
+      "cursor-pointer",
+      "hover:text-evernote-green",
+      "truncate",
+      "text-sm",
+      "text-gray-400",
+      "hover:text-white",
+      "flex-shrink-0",
+      "ml-2",
+      "gap-2",
+      "mb-3",
+      "text-xs",
+      "px-1.5",
+      "py-0.5",
+      "rounded",
+      "bg-gray-600",
+      "text-gray-300",
+      "w-full",
+      "py-2",
+      "hover:bg-green-600",
+      "transition",
+      "flex-1",
+      "overflow-y-auto",
+      "px-4",
+      "hover:bg-evernote-hover",
+      "bg-evernote-hover",
+      "text-evernote-green"
+    ],
+    "text": {
+      "headings": [
+        "H3: Hello World",
+        "H3: Untitled"
+      ],
+      "bodySnippet": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+    },
+    "cssVars": []
+  },
+  "/shared": {
+    "url": "https://note.cozyroad.com/app",
+    "title": "Evernote Clone",
+    "layout": [
+      "nav (256x767)"
+    ],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 168, 45)",
+      "rgb(45, 45, 45)",
+      "rgb(156, 163, 175)",
+      "rgb(75, 85, 99)",
+      "rgb(209, 213, 219)",
+      "rgb(61, 61, 61)",
+      "rgb(26, 26, 26)",
+      "rgb(249, 250, 251)",
+      "rgb(107, 114, 128)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px",
+      "button: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "input: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px"
+    ],
+    "interactives": {
+      "buttons": [
+        "☰",
+        "Logout",
+        "+ New Note",
+        "+",
+        "+",
+        "📥 Import from Evernote"
+      ],
+      "links": [],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "New notebook",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "New tag",
+          "name": ""
+        },
+        {
+          "type": "file",
+          "placeholder": "",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "Search notes...",
+          "name": ""
+        }
+      ]
+    },
+    "components": [
+      "Sidebar"
+    ],
+    "classes": [
+      "flex",
+      "h-screen",
+      "bg-white",
+      "overflow-hidden",
+      "md:hidden",
+      "fixed",
+      "top-4",
+      "left-4",
+      "z-50",
+      "bg-evernote-green",
+      "text-white",
+      "p-2",
+      "rounded-lg",
+      "shadow-lg",
+      "-translate-x-full",
+      "md:translate-x-0",
+      "md:relative",
+      "inset-y-0",
+      "left-0",
+      "z-40",
+      "transition-transform",
+      "duration-300",
+      "ease-in-out",
+      "w-64",
+      "bg-evernote-sidebar",
+      "flex-col",
+      "h-full",
+      "p-4",
+      "border-b",
+      "border-gray-700",
+      "items-center",
+      "justify-between",
+      "mb-1",
+      "font-semibold",
+      "cursor-pointer",
+      "hover:text-evernote-green",
+      "truncate",
+      "text-sm",
+      "text-gray-400",
+      "hover:text-white",
+      "flex-shrink-0",
+      "ml-2",
+      "gap-2",
+      "mb-3",
+      "text-xs",
+      "px-1.5",
+      "py-0.5",
+      "rounded",
+      "bg-gray-600",
+      "text-gray-300",
+      "w-full",
+      "py-2",
+      "hover:bg-green-600",
+      "transition",
+      "flex-1",
+      "overflow-y-auto",
+      "px-4",
+      "hover:bg-evernote-hover",
+      "bg-evernote-hover",
+      "text-evernote-green"
+    ],
+    "text": {
+      "headings": [
+        "H3: Hello World",
+        "H3: Untitled"
+      ],
+      "bodySnippet": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+    },
+    "cssVars": []
+  },
+  "/tags": {
+    "url": "https://note.cozyroad.com/app",
+    "title": "Evernote Clone",
+    "layout": [
+      "nav (256x767)"
+    ],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 168, 45)",
+      "rgb(45, 45, 45)",
+      "rgb(156, 163, 175)",
+      "rgb(75, 85, 99)",
+      "rgb(209, 213, 219)",
+      "rgb(61, 61, 61)",
+      "rgb(26, 26, 26)",
+      "rgb(249, 250, 251)",
+      "rgb(107, 114, 128)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px",
+      "button: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "input: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px"
+    ],
+    "interactives": {
+      "buttons": [
+        "☰",
+        "Logout",
+        "+ New Note",
+        "+",
+        "+",
+        "📥 Import from Evernote"
+      ],
+      "links": [],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "New notebook",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "New tag",
+          "name": ""
+        },
+        {
+          "type": "file",
+          "placeholder": "",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "Search notes...",
+          "name": ""
+        }
+      ]
+    },
+    "components": [
+      "Sidebar"
+    ],
+    "classes": [
+      "flex",
+      "h-screen",
+      "bg-white",
+      "overflow-hidden",
+      "md:hidden",
+      "fixed",
+      "top-4",
+      "left-4",
+      "z-50",
+      "bg-evernote-green",
+      "text-white",
+      "p-2",
+      "rounded-lg",
+      "shadow-lg",
+      "-translate-x-full",
+      "md:translate-x-0",
+      "md:relative",
+      "inset-y-0",
+      "left-0",
+      "z-40",
+      "transition-transform",
+      "duration-300",
+      "ease-in-out",
+      "w-64",
+      "bg-evernote-sidebar",
+      "flex-col",
+      "h-full",
+      "p-4",
+      "border-b",
+      "border-gray-700",
+      "items-center",
+      "justify-between",
+      "mb-1",
+      "font-semibold",
+      "cursor-pointer",
+      "hover:text-evernote-green",
+      "truncate",
+      "text-sm",
+      "text-gray-400",
+      "hover:text-white",
+      "flex-shrink-0",
+      "ml-2",
+      "gap-2",
+      "mb-3",
+      "text-xs",
+      "px-1.5",
+      "py-0.5",
+      "rounded",
+      "bg-gray-600",
+      "text-gray-300",
+      "w-full",
+      "py-2",
+      "hover:bg-green-600",
+      "transition",
+      "flex-1",
+      "overflow-y-auto",
+      "px-4",
+      "hover:bg-evernote-hover",
+      "bg-evernote-hover",
+      "text-evernote-green"
+    ],
+    "text": {
+      "headings": [
+        "H3: Hello World",
+        "H3: Untitled"
+      ],
+      "bodySnippet": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+    },
+    "cssVars": []
+  },
+  "/folders": {
+    "url": "https://note.cozyroad.com/app",
+    "title": "Evernote Clone",
+    "layout": [
+      "nav (256x767)"
+    ],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 168, 45)",
+      "rgb(45, 45, 45)",
+      "rgb(156, 163, 175)",
+      "rgb(75, 85, 99)",
+      "rgb(209, 213, 219)",
+      "rgb(61, 61, 61)",
+      "rgb(26, 26, 26)",
+      "rgb(249, 250, 251)",
+      "rgb(107, 114, 128)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px",
+      "button: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "input: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px"
+    ],
+    "interactives": {
+      "buttons": [
+        "☰",
+        "Logout",
+        "+ New Note",
+        "+",
+        "+",
+        "📥 Import from Evernote"
+      ],
+      "links": [],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "New notebook",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "New tag",
+          "name": ""
+        },
+        {
+          "type": "file",
+          "placeholder": "",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "Search notes...",
+          "name": ""
+        }
+      ]
+    },
+    "components": [
+      "Sidebar"
+    ],
+    "classes": [
+      "flex",
+      "h-screen",
+      "bg-white",
+      "overflow-hidden",
+      "md:hidden",
+      "fixed",
+      "top-4",
+      "left-4",
+      "z-50",
+      "bg-evernote-green",
+      "text-white",
+      "p-2",
+      "rounded-lg",
+      "shadow-lg",
+      "-translate-x-full",
+      "md:translate-x-0",
+      "md:relative",
+      "inset-y-0",
+      "left-0",
+      "z-40",
+      "transition-transform",
+      "duration-300",
+      "ease-in-out",
+      "w-64",
+      "bg-evernote-sidebar",
+      "flex-col",
+      "h-full",
+      "p-4",
+      "border-b",
+      "border-gray-700",
+      "items-center",
+      "justify-between",
+      "mb-1",
+      "font-semibold",
+      "cursor-pointer",
+      "hover:text-evernote-green",
+      "truncate",
+      "text-sm",
+      "text-gray-400",
+      "hover:text-white",
+      "flex-shrink-0",
+      "ml-2",
+      "gap-2",
+      "mb-3",
+      "text-xs",
+      "px-1.5",
+      "py-0.5",
+      "rounded",
+      "bg-gray-600",
+      "text-gray-300",
+      "w-full",
+      "py-2",
+      "hover:bg-green-600",
+      "transition",
+      "flex-1",
+      "overflow-y-auto",
+      "px-4",
+      "hover:bg-evernote-hover",
+      "bg-evernote-hover",
+      "text-evernote-green"
+    ],
+    "text": {
+      "headings": [
+        "H3: Hello World",
+        "H3: Untitled"
+      ],
+      "bodySnippet": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nSelect a note or create a new one"
+    },
+    "cssVars": []
+  },
+  "/app/new-note": {
+    "url": "https://note.cozyroad.com/app/note/cmnxz7veb000101o105op3hv9",
+    "title": "Evernote Clone",
+    "layout": [
+      "nav (256x767)"
+    ],
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(0, 168, 45)",
+      "rgb(45, 45, 45)",
+      "rgb(156, 163, 175)",
+      "rgb(75, 85, 99)",
+      "rgb(209, 213, 219)",
+      "rgb(22, 163, 74)",
+      "rgb(61, 61, 61)",
+      "rgb(26, 26, 26)",
+      "rgb(249, 250, 251)",
+      "rgb(107, 114, 128)",
+      "rgb(240, 253, 244)",
+      "rgb(68, 68, 68)",
+      "rgb(0, 102, 204)"
+    ],
+    "fonts": [
+      "body: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "p: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px",
+      "button: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 16px",
+      "input: -apple-system, \"system-ui\", \"Segoe UI\", Roboto, sans-serif 14px"
+    ],
+    "interactives": {
+      "buttons": [
+        "☰",
+        "Logout",
+        "+ New Note",
+        "+",
+        "+",
+        "📥 Import from Evernote",
+        "← Back to notes",
+        "👥",
+        "🔗",
+        "📌",
+        "🗑️"
+      ],
+      "links": [],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "New notebook",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "New tag",
+          "name": ""
+        },
+        {
+          "type": "file",
+          "placeholder": "",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "Search notes...",
+          "name": ""
+        },
+        {
+          "type": "select-one",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "Note title",
+          "name": ""
+        },
+        {
+          "type": "select-one",
+          "name": ""
+        },
+        {
+          "type": "text",
+          "placeholder": "",
+          "name": ""
+        }
+      ]
+    },
+    "components": [
+      "RichTextEditor",
+      "Sidebar",
+      "Toolbar"
+    ],
+    "classes": [
+      "flex",
+      "h-screen",
+      "bg-white",
+      "overflow-hidden",
+      "md:hidden",
+      "fixed",
+      "top-4",
+      "left-4",
+      "z-50",
+      "bg-evernote-green",
+      "text-white",
+      "p-2",
+      "rounded-lg",
+      "shadow-lg",
+      "-translate-x-full",
+      "md:translate-x-0",
+      "md:relative",
+      "inset-y-0",
+      "left-0",
+      "z-40",
+      "transition-transform",
+      "duration-300",
+      "ease-in-out",
+      "w-64",
+      "bg-evernote-sidebar",
+      "flex-col",
+      "h-full",
+      "p-4",
+      "border-b",
+      "border-gray-700",
+      "items-center",
+      "justify-between",
+      "mb-1",
+      "font-semibold",
+      "cursor-pointer",
+      "hover:text-evernote-green",
+      "truncate",
+      "text-sm",
+      "text-gray-400",
+      "hover:text-white",
+      "flex-shrink-0",
+      "ml-2",
+      "gap-2",
+      "mb-3",
+      "text-xs",
+      "px-1.5",
+      "py-0.5",
+      "rounded",
+      "bg-gray-600",
+      "text-gray-300",
+      "w-full",
+      "py-2",
+      "hover:bg-green-600",
+      "transition",
+      "flex-1",
+      "overflow-y-auto",
+      "px-4",
+      "hover:bg-evernote-hover",
+      "bg-evernote-hover",
+      "text-evernote-green"
+    ],
+    "text": {
+      "headings": [
+        "H3: Hello World",
+        "H3: Untitled",
+        "H3: Untitled"
+      ],
+      "bodySnippet": "Tung\nLogout\nTung's Workspace\nFREE\n+ New Note\n📝 All Notes\n👥 Shared with me\n🗑️ Trash\nNOTEBOOKS\n▼\n+\nTAGS\n▼\n+\n📥 Import from Evernote\n📌\nHello World\n\n# Rapi fuit qui iubemur ## Orant est moenia optari Lorem **markdownum** quoque imitantes liquidi cor\n\nApr 13, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nUntitled\n\nNo content\n\nApr 14, 2026\nNo notebook\n👥\n🔗\n📌\n🗑️\n\n\n"
+    },
+    "cssVars": []
+  }
+}
