@@ -23,6 +23,7 @@ export default function RegisterForm() {
       email,
       password,
       options: {
+        emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL ?? window.location.origin}/auth/confirm`,
         data: {
           name,
           workspace_name: workspaceName || `${name}'s Workspace`,
