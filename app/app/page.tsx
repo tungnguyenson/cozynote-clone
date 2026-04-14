@@ -8,6 +8,7 @@ import NoteListPanel from "@/app/components/app/NoteListPanel";
 import NoteEditorPanel from "@/app/components/app/NoteEditorPanel";
 import { useNoteStore } from "@/hooks/useNoteStore";
 import type { AppView, Notebook, Tag } from "@/lib/types";
+import { Menu, X } from "lucide-react";
 
 export default function AppPage() {
   const router = useRouter();
@@ -105,23 +106,9 @@ export default function AppPage() {
         onClick={() => setSidebarOpen((o) => !o)}
         aria-label={sidebarOpen ? "Close menu" : "Open menu"}
         className="md:hidden fixed top-4 right-4 z-50 flex h-10 w-10 items-center justify-center bg-evernote-green text-white rounded-lg shadow-lg"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <line x1="4" y1="6" x2="20" y2="6" />
-          <line x1="4" y1="12" x2="20" y2="12" />
-          <line x1="4" y1="18" x2="20" y2="18" />
-        </svg>
+      > {sidebarOpen ? <X size={20} /> :
+        <Menu size={20} />
+        }
       </button>
 
       {/* Sidebar overlay (mobile) */}
@@ -134,9 +121,8 @@ export default function AppPage() {
 
       {/* Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 z-40 transition-transform duration-300 md:relative md:translate-x-0 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed inset-y-0 left-0 z-40 transition-transform duration-300 md:relative md:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <Sidebar
           userName={userName}
