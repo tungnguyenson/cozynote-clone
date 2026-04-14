@@ -8,7 +8,7 @@ interface AuthCardProps {
 
 export default function AuthCard({ children, subtitle, footer }: AuthCardProps) {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 sm:px-6">
       <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 w-full max-w-md">
         <div className="text-center mb-8">
           <Link
