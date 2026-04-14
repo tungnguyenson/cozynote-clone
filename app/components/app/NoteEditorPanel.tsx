@@ -220,7 +220,7 @@ export default function NoteEditorPanel({
       </button>
 
       {/* Toolbar */}
-      <div className="border-b border-gray-200 p-2 md:p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+      <div className="border-b border-gray-200 p-2 md:p-4 md:pb-4.5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         {/* Left: notebook select + share URL */}
         <div className="flex items-center gap-2 md:gap-4 flex-1 overflow-x-auto">
           <select
@@ -270,9 +270,8 @@ export default function NoteEditorPanel({
           <button
             onClick={togglePin}
             title={isPinned ? "Unpin" : "Pin"}
-            className={`p-2 rounded hover:bg-gray-100 ${
-              isPinned ? "text-evernote-green" : "text-gray-400"
-            }`}
+            className={`p-2 rounded hover:bg-gray-100 ${isPinned ? "text-evernote-green" : "text-gray-400"
+              }`}
           >
             📌
           </button>
@@ -287,7 +286,7 @@ export default function NoteEditorPanel({
       </div>
 
       {/* Title */}
-      <div className="p-4 border-b border-gray-200">
+      <div className="p-4 pt-[14px] pt-[14px] border-b border-gray-200">
         <input
           type="text"
           placeholder="Note title"
