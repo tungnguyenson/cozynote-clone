@@ -1,0 +1,133 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
+import { createClient } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
+import Sidebar from "@/app/components/app/Sidebar";
+import NoteListPanel from "@/app/components/app/NoteListPanel";
+import NoteEditorPanel from "@/app/components/app/NoteEditorPanel";
+import type { AppView, Notebook, Tag } from "@/lib/types";
+
+export default function AppPage() {
+  const router = useRouter();
+  const [userName, setUserName] = useState("");
+  const [workspaceName, setWorkspaceName] = useState("My Workspace");
+  const [notebooks, setNotebooks] = useState<Notebook[]>([]);
+  const [tags, setTags] = useState<Tag[]>([]);
+  const [view, setView] = useState<AppView>("all");
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  // Verify session on mount
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (!user) router.push("/login");
+    });
+  }, [router]);
+
+  // Load profile + sidebar data
+  const loadSidebarData = useCallback(async () => {
+    const [meRes, nbRes, tagRes] = await Promise.all([
+      fetch("/api/auth/me"),
+      fetch("/api/notebooks"),
+      fetch("/api/tags"),
+    ]);
+    if (meRes.ok) {
+      const { profile } = await meRes.json();
+      setUserName(profile.name || "");
+      setWorkspaceName(profile.workspace_name || "My Workspace");
+    }
+    if (nbRes.ok) setNotebooks((await nbRes.json()).notebooks);
+    if (tagRes.ok) setTags((await tagRes.json()).tags);
+  }, []);
+
+  useEffect(() => { loadSidebarData(); }, [loadSidebarData]);
+
+  async function createNote() {
+    const res = await fetch("/api/notes", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title: "Untitled", content: "" }),
+    });
+    if (res.ok) {
+      const { note } = await res.json();
+      setView("all");
+      setRefreshKey((k) => k + 1);
+      setSelectedId(note.id);
+    }
+  }
+
+  function handleNoteDeleted(id: string) {
+    if (selectedId === id) setSelectedId(null);
+    setRefreshKey((k) => k + 1);
+  }
+
+  return (
+    <div className="flex h-screen bg-white overflow-hidden">
+      {/* Mobile toggle */}
+      <button
+        onClick={() => setSidebarOpen((o) => !o)}
+        className="md:hidden fixed top-4 left-4 z-50 bg-evernote-green text-white p-2 rounded-lg shadow-lg"
+      >
+        ☰
+      </button>
+
+      {/* Sidebar overlay (mobile) */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black/40 md:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <div
+        className={`fixed inset-y-0 left-0 z-40 transition-transform duration-300 md:relative md:translate-x-0 ${
+          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <Sidebar
+          userName={userName}
+          workspaceName={workspaceName}
+          notebooks={notebooks}
+          tags={tags}
+          view={view}
+          onViewChange={(v) => {
+            setView(v);
+            setSelectedId(null);
+            setSidebarOpen(false);
+          }}
+          onNewNote={createNote}
+          onNotebookCreated={(nb) => setNotebooks((prev) => [...prev, nb])}
+          onTagCreated={(tag) => setTags((prev) => [...prev, tag])}
+          onImported={() => setRefreshKey((k) => k + 1)}
+        />
+      </div>
+
+      {/* Note list — hidden on mobile when note is open */}
+      <div className={selectedId ? "hidden md:flex" : "flex w-full md:w-auto"}>
+        <NoteListPanel
+          view={view}
+          selectedId={selectedId}
+          onSelect={(id) => {
+            setSelectedId(id);
+            setSidebarOpen(false);
+          }}
+          refreshKey={refreshKey}
+        />
+      </div>
+
+      {/* Editor */}
+      <div className={`flex-1 flex min-w-0 ${!selectedId && "hidden md:flex"}`}>
+        <NoteEditorPanel
+          noteId={selectedId}
+          onBack={() => setSelectedId(null)}
+          onNoteUpdated={() => setRefreshKey((k) => k + 1)}
+          onDeleteNote={handleNoteDeleted}
+        />
+      </div>
+    </div>
+  );
+}
