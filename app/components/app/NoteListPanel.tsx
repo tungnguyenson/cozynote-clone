@@ -60,7 +60,7 @@ export default function NoteListPanel({
         );
 
   return (
-    <div className="hidden md:flex flex-col w-full md:w-80 border-r border-gray-200">
+    <div className="flex flex-col w-full md:w-80 border-r border-gray-200">
       <div className="w-full flex flex-col h-full bg-gray-50">
         {/* Search */}
         <div className="p-4 pt-14 md:pt-4 border-b border-gray-200">
