@@ -103,9 +103,25 @@ export default function AppPage() {
       {/* Mobile toggle */}
       <button
         onClick={() => setSidebarOpen((o) => !o)}
-        className="md:hidden fixed top-4 left-4 z-50 bg-evernote-green text-white p-2 rounded-lg shadow-lg"
+        aria-label={sidebarOpen ? "Close menu" : "Open menu"}
+        className="md:hidden fixed top-4 right-4 z-50 flex h-10 w-10 items-center justify-center bg-evernote-green text-white rounded-lg shadow-lg"
       >
-        ☰
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
       </button>
 
       {/* Sidebar overlay (mobile) */}
