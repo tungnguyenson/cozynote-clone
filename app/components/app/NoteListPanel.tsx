@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NoteCard from "./NoteCard";
 import type { NoteWithSync } from "@/lib/types";
 
@@ -14,6 +14,16 @@ interface NoteListPanelProps {
   onDeleteForever?: (id: string) => void;
 }
 
+function NoteCardSkeleton() {
+  return (
+    <div className="p-4 border-b border-gray-200 animate-pulse">
+      <div className="h-4 bg-gray-200 rounded w-3/4" />
+      <div className="h-3 bg-gray-200 rounded w-full mt-2" />
+      <div className="h-3 bg-gray-200 rounded w-1/2 mt-3" />
+    </div>
+  );
+}
+
 export default function NoteListPanel({
   notes,
   loading,
@@ -24,6 +34,19 @@ export default function NoteListPanel({
   onDeleteForever,
 }: NoteListPanelProps) {
   const [search, setSearch] = useState("");
+  const [skeletonCount, setSkeletonCount] = useState(0);
+
+  useEffect(() => {
+    const stored = localStorage.getItem("noteListCount");
+    if (stored) setSkeletonCount(Number(stored));
+  }, []);
+
+  useEffect(() => {
+    if (!loading && notes.length > 0) {
+      localStorage.setItem("noteListCount", String(notes.length));
+      setSkeletonCount(notes.length);
+    }
+  }, [loading, notes.length]);
 
   const filtered =
     search.trim() === ""
@@ -51,7 +74,9 @@ export default function NoteListPanel({
         {/* List */}
         <div className="flex-1 overflow-y-auto relative">
           {loading && notes.length === 0 ? (
-            <div className="p-4 text-sm text-gray-400">Loading…</div>
+            Array.from({ length: skeletonCount }).map((_, i) => (
+              <NoteCardSkeleton key={i} />
+            ))
           ) : filtered.length === 0 ? (
             <div className="p-4 text-sm text-gray-400">No notes found</div>
           ) : (
