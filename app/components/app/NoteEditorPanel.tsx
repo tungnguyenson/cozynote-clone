@@ -227,11 +227,10 @@ export default function NoteEditorPanel({
         <div className="flex items-center gap-1 md:gap-2 flex-wrap">
           <button
             onClick={() => setShowShareModal(true)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-sm font-medium transition-colors ${
-              shareUrl
-                ? "bg-evernote-green/10 text-evernote-green hover:bg-evernote-green/20"
-                : "hover:bg-gray-100 text-gray-400"
-            }`}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-sm font-medium transition-colors cursor-pointer ${shareUrl
+              ? "bg-evernote-green/10 text-evernote-green hover:bg-evernote-green/20"
+              : "hover:bg-gray-100 text-gray-400"
+              }`}
             title="Share note"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
@@ -243,14 +242,14 @@ export default function NoteEditorPanel({
           <button
             onClick={togglePin}
             title={isPinned ? "Unpin" : "Pin"}
-            className={`p-2 rounded hover:bg-gray-100 ${isPinned ? "text-evernote-green" : "text-gray-400"
+            className={`p-2 rounded cursor-pointer hover:bg-gray-100 ${isPinned ? "" : "grayscale"
               }`}
           >
             📌
           </button>
           <button
             onClick={moveToTrash}
-            className="p-2 rounded hover:bg-gray-100 text-gray-400"
+            className="p-2 rounded cursor-pointer hover:bg-gray-100 text-gray-400"
             title="Move to trash"
           >
             🗑️
