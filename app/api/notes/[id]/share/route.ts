@@ -35,7 +35,7 @@ export async function POST(_request: NextRequest, { params }: Params) {
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
-  return NextResponse.json({ url: `/notes/${updated.public_slug}` });
+  return NextResponse.json({ url: `/shared/${updated.public_slug}` });
 }
 
 export async function DELETE(_request: NextRequest, { params }: Params) {

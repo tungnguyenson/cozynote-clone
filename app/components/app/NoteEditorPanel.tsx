@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import dynamic from "next/dynamic";
 import type { Note, NoteWithSync, Notebook, Tag } from "@/lib/types";
+import ShareNoteModal from "./ShareNoteModal";
 
 const QuillEditor = dynamic(() => import("./QuillEditor"), { ssr: false });
 
@@ -50,7 +51,7 @@ export default function NoteEditorPanel({
   const [content, setContent] = useState("");
   const [notebookId, setNotebookId] = useState<string>("");
   const [shareUrl, setShareUrl] = useState<string | null>(null);
-  const [sharing, setSharing] = useState(false);
+  const [showShareModal, setShowShareModal] = useState(false);
   const [isPinned, setIsPinned] = useState(false);
 
   // Refs tracking the latest unsaved edit — capture (noteId + value) at keystroke time.
@@ -185,21 +186,6 @@ export default function NoteEditorPanel({
     onDeleteNote(note.id);
   }
 
-  async function toggleShare() {
-    if (!note) return;
-    setSharing(true);
-    if (shareUrl) {
-      await fetch(`/api/notes/${note.id}/share`, { method: "DELETE" });
-      setShareUrl(null);
-    } else {
-      const res = await fetch(`/api/notes/${note.id}/share`, { method: "POST" });
-      if (res.ok) {
-        const { url } = await res.json();
-        setShareUrl(url);
-      }
-    }
-    setSharing(false);
-  }
 
   if (!note) {
     return (
@@ -221,7 +207,7 @@ export default function NoteEditorPanel({
 
       {/* Toolbar */}
       <div className="border-b border-gray-200 p-2 md:p-4 md:pb-4.5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-        {/* Left: notebook select + share URL */}
+        {/* Left: notebook select */}
         <div className="flex items-center gap-2 md:gap-4 flex-1 overflow-x-auto">
           <select
             value={notebookId}
@@ -235,37 +221,24 @@ export default function NoteEditorPanel({
               </option>
             ))}
           </select>
-          <div className="flex gap-1 flex-wrap">
-            {shareUrl && (
-              <button
-                onClick={() =>
-                  navigator.clipboard.writeText(
-                    window.location.origin + shareUrl
-                  )
-                }
-                className="text-xs text-evernote-green underline truncate max-w-xs"
-              >
-                {window.location.origin + shareUrl}
-              </button>
-            )}
-          </div>
         </div>
 
         {/* Right: action buttons */}
         <div className="flex items-center gap-1 md:gap-2 flex-wrap">
           <button
-            className="p-2 rounded hover:bg-gray-100 text-gray-400"
-            title="Manage collaborators"
+            onClick={() => setShowShareModal(true)}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-sm font-medium transition-colors ${
+              shareUrl
+                ? "bg-evernote-green/10 text-evernote-green hover:bg-evernote-green/20"
+                : "hover:bg-gray-100 text-gray-400"
+            }`}
+            title="Share note"
           >
-            👥
-          </button>
-          <button
-            onClick={toggleShare}
-            disabled={sharing}
-            className="p-2 rounded hover:bg-gray-100 text-gray-400"
-            title={shareUrl ? "Unshare note" : "Share note"}
-          >
-            🔗
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+              <path d="M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z" />
+              <path d="M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z" />
+            </svg>
+            {shareUrl && <span>Shared</span>}
           </button>
           <button
             onClick={togglePin}
@@ -300,6 +273,23 @@ export default function NoteEditorPanel({
       <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
         <QuillEditor value={content} onChange={handleContentChange} />
       </div>
+
+      {showShareModal && (
+        <ShareNoteModal
+          noteId={note.id}
+          existingSharePath={shareUrl}
+          onClose={() => setShowShareModal(false)}
+          onShared={(path) => {
+            setShareUrl(path);
+            onNoteChanged(note.id, { is_public: true });
+          }}
+          onStopped={() => {
+            setShareUrl(null);
+            onNoteChanged(note.id, { is_public: false, public_slug: null });
+            setShowShareModal(false);
+          }}
+        />
+      )}
     </div>
   );
 }
