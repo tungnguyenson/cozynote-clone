@@ -286,7 +286,7 @@ export default function NoteEditorPanel({
       </div>
 
       {/* Title */}
-      <div className="p-4 pt-[14px] pt-[14px] border-b border-gray-200">
+      <div className="p-4 pt-3.5 pb-3.75 border-b border-gray-200">
         <input
           type="text"
           placeholder="Note title"

@@ -5,7 +5,7 @@
  * Run:  npx playwright test tests/visual-diff.spec.ts --project=chromium
  */
 
-import { test, chromium, type Browser, type BrowserContext, type Page } from "@playwright/test";
+import { test, chromium, type Browser, type BrowserContext } from "@playwright/test";
 import * as fs from "fs";
 import * as path from "path";
 import { PNG } from "pngjs";
@@ -38,13 +38,6 @@ const PAGE_SPECS: PageSpec[] = [
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
-async function login(page: Page, base: string) {
-  await page.goto(`${base}/login`, { waitUntil: "networkidle" });
-  await page.fill('input[type="email"]', EMAIL);
-  await page.fill('input[type="password"]', PASSWORD);
-  await page.click('button[type="submit"]');
-  await page.waitForURL(/\/app/, { timeout: 20000 });
-}
 
 async function capture(
   context: BrowserContext,

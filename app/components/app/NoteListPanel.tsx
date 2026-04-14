@@ -34,6 +34,9 @@ export default function NoteListPanel({
   onDeleteForever,
 }: NoteListPanelProps) {
   const [search, setSearch] = useState("");
+
+  // Must be 0 on first render so server and client HTML match (no hydration mismatch).
+  // localStorage is only safe to read after hydration, inside useEffect.
   const [skeletonCount, setSkeletonCount] = useState(0);
 
   useEffect(() => {
@@ -44,7 +47,6 @@ export default function NoteListPanel({
   useEffect(() => {
     if (!loading && notes.length > 0) {
       localStorage.setItem("noteListCount", String(notes.length));
-      setSkeletonCount(notes.length);
     }
   }, [loading, notes.length]);
 

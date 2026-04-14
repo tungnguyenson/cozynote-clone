@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import Sidebar from "@/app/components/app/Sidebar";
 import NoteListPanel from "@/app/components/app/NoteListPanel";
 import NoteEditorPanel from "@/app/components/app/NoteEditorPanel";
 import { useNoteStore } from "@/hooks/useNoteStore";
-import type { AppView, Note, Notebook, Tag } from "@/lib/types";
+import type { AppView, Notebook, Tag } from "@/lib/types";
 
 export default function AppPage() {
   const router = useRouter();
@@ -40,24 +40,25 @@ export default function AppPage() {
   }, [router]);
 
   // Load profile + sidebar data
-  const loadSidebarData = useCallback(async () => {
-    const [meRes, nbRes, tagRes] = await Promise.all([
-      fetch("/api/auth/me"),
-      fetch("/api/notebooks"),
-      fetch("/api/tags"),
-    ]);
-    if (meRes.ok) {
-      const { profile } = await meRes.json();
-      setUserName(profile.name || "");
-      setWorkspaceName(profile.workspace_name || "My Workspace");
-    }
-    if (nbRes.ok) setNotebooks((await nbRes.json()).notebooks);
-    if (tagRes.ok) setTags((await tagRes.json()).tags);
-  }, []);
-
   useEffect(() => {
-    loadSidebarData();
-  }, [loadSidebarData]);
+    let cancelled = false;
+    (async () => {
+      const [meRes, nbRes, tagRes] = await Promise.all([
+        fetch("/api/auth/me"),
+        fetch("/api/notebooks"),
+        fetch("/api/tags"),
+      ]);
+      if (cancelled) return;
+      if (meRes.ok) {
+        const { profile } = await meRes.json();
+        setUserName(profile.name || "");
+        setWorkspaceName(profile.workspace_name || "My Workspace");
+      }
+      if (nbRes.ok) setNotebooks((await nbRes.json()).notebooks);
+      if (tagRes.ok) setTags((await tagRes.json()).tags);
+    })();
+    return () => { cancelled = true; };
+  }, []);
 
   async function createNote() {
     const res = await fetch("/api/notes", {

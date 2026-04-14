@@ -43,16 +43,18 @@ function viewKey(view: AppView): string {
 
 export function useNoteStore(view: AppView): NoteStore {
   const [notes, setNotes] = useState<NoteWithSync[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loadedVersion, setLoadedVersion] = useState<string | null>(null);
   const [refreshCount, setRefreshCount] = useState(0);
   // Track in-flight fetch so we can ignore stale results when view changes fast
   const fetchIdRef = useRef(0);
 
   const key = viewKey(view);
+  const version = `${key}@${refreshCount}`;
+  // loading is derived — true whenever the current version hasn't finished fetching
+  const loading = loadedVersion !== version;
 
   useEffect(() => {
     const fetchId = ++fetchIdRef.current;
-    setLoading(true);
 
     const params = buildParams(view);
     fetch(`/api/notes?${params}`)
@@ -62,11 +64,11 @@ export function useNoteStore(view: AppView): NoteStore {
         setNotes(
           sortNotes(raw.map((n) => ({ ...n, _syncStatus: "synced" as SyncStatus })))
         );
-        setLoading(false);
+        setLoadedVersion(version);
       })
       .catch(() => {
         if (fetchId !== fetchIdRef.current) return;
-        setLoading(false);
+        setLoadedVersion(version);
       });
   }, [key, refreshCount]); // eslint-disable-line react-hooks/exhaustive-deps
 
