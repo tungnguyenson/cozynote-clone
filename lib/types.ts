@@ -35,3 +35,9 @@ export type AppView =
   | "shared"
   | { notebook_id: string }
   | { tag_id: string };
+
+export type SyncStatus = "synced" | "pending" | "error";
+
+export interface NoteWithSync extends Note {
+  _syncStatus: SyncStatus;
+}

@@ -57,11 +57,12 @@ export default function QuillEditor({ value, onChange }: QuillEditorProps) {
       });
     });
 
+    const container = containerRef.current;
     return () => {
       destroyed = true;
       quillRef.current = null;
-      if (containerRef.current) {
-        containerRef.current.innerHTML = "";
+      if (container) {
+        container.innerHTML = "";
       }
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps

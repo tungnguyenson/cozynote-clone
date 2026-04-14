@@ -1,7 +1,7 @@
-import type { Note } from "@/lib/types";
+import type { NoteWithSync } from "@/lib/types";
 
 interface NoteCardProps {
-  note: Note;
+  note: NoteWithSync;
   selected: boolean;
   onClick: () => void;
   trashMode?: boolean;
@@ -15,6 +15,23 @@ function formatDate(iso: string) {
     day: "numeric",
     year: "numeric",
   });
+}
+
+function SyncIndicator({ status }: { status: NoteWithSync["_syncStatus"] }) {
+  if (status === "synced") return null;
+  if (status === "pending") {
+    return (
+      <span
+        className="inline-block w-3 h-3 rounded-full border-2 border-gray-300 border-t-gray-500 animate-spin"
+        title="Saving…"
+      />
+    );
+  }
+  return (
+    <span className="text-amber-500 text-xs" title="Sync failed — will retry">
+      ⚠
+    </span>
+  );
 }
 
 export default function NoteCard({
@@ -41,8 +58,9 @@ export default function NoteCard({
       <p className="text-sm text-gray-500 truncate mt-1">
         {note.content_text || "No content"}
       </p>
-      <div className="flex items-center gap-2 mt-2 text-xs text-gray-400">
+      <div className="flex items-center justify-between mt-2 text-xs text-gray-400">
         <span>{formatDate(note.updated_at)}</span>
+        <SyncIndicator status={note._syncStatus} />
       </div>
 
       {trashMode && (

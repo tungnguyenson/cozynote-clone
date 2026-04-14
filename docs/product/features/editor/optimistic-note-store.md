@@ -130,38 +130,61 @@ useEffect(() => {
 
 ## Race Condition Prevention
 
+### Misattribution (wrong note saved)
+
 **Scenario:** User selects A, starts typing, then switches to B before the debounce fires.
 
-**Problem with naive approach:** Debounce fires with `noteId` from closure pointing to B (the current selection), saving A's content to B.
+**Problem with naive debounce:** `useDebounce` wraps a state value. When the user switches to B, `setTitle(B.title)` is called — this changes `title` state, which **cancels the in-flight debounce timer** for A and starts a new one for B's title. A's unsaved changes are silently lost.
 
-**Fix: Capture `noteId` at edit time, not at save time.**
+**Fix: two-ref pattern — capture at keystroke, flush on switch.**
 
 ```typescript
-// Each change captures which note it belongs to
-const handleTitleChange = (newTitle: string) => {
-  const targetId = noteId; // captured at this exact moment
+// Refs hold the latest unsaved edit — keyed to the note that was active when the user typed
+const pendingTitleRef   = useRef<{ noteId: string; value: string } | null>(null);
+const pendingContentRef = useRef<{ noteId: string; value: string; text: string } | null>(null);
+
+// 1. On every keystroke, capture (noteId + value) into the ref
+function handleTitleChange(newTitle: string) {
   setTitle(newTitle);
-  pendingSaveRef.current = { noteId: targetId, title: newTitle };
-};
+  if (note?.id) pendingTitleRef.current = { noteId: note.id, value: newTitle };
+}
 
-// Debounce save uses the captured id — independent of current selectedId
-const flushPendingSave = () => {
-  if (!pendingSaveRef.current) return;
-  const { noteId: saveForId, ...patch } = pendingSaveRef.current;
+// 2. On note switch: flush refs BEFORE loading the new note
+useEffect(() => {
+  const pt = pendingTitleRef.current;
+  if (pt && pt.value !== lastSavedTitle.current) {
+    onNoteChanged(pt.noteId, { title: pt.value });   // optimistic update for correct note
+    flushSave(pt.noteId, { title: pt.value });        // API call for correct note
+  }
+  pendingTitleRef.current = null;
 
-  onNoteChanged(saveForId, patch);             // optimistic update for correct note
+  // ... same pattern for content ...
 
-  api.updateNote(saveForId, patch)
-    .then(n => onNoteSynced(saveForId, n))
-    .catch(() => onNoteSyncError(saveForId));
+  // Now load the new note
+  setTitle(note.title);
+  lastSavedTitle.current = note.title;
+}, [note?.id]); // eslint-disable-line
 
-  pendingSaveRef.current = null;
-};
+// 3. Normal debounce save (user stays on the same note)
+useEffect(() => {
+  const pt = pendingTitleRef.current;
+  if (!pt || pt.noteId !== note?.id) return; // null or already flushed on switch
+  if (pt.value === lastSavedTitle.current) return;
+
+  lastSavedTitle.current = pt.value;
+  onNoteChanged(pt.noteId, { title: pt.value });
+  flushSave(pt.noteId, { title: pt.value });
+  pendingTitleRef.current = null;
+}, [debouncedTitle]); // eslint-disable-line
 ```
 
-**Result:** No matter how fast the user switches between notes, each edit is always attributed to the note that was active when the user typed.
+**Why this is safe:**
 
-**On note switch:** The editor immediately reflects the new note (synchronous — data comes from store), so the user never sees stale content from a previous selection.
+- A's timer is cancelled when `setTitle(B.title)` runs (that's how `useDebounce` works — cleanup clears the `setTimeout`). But the ref still holds A's data, so the switch effect flushes it first.
+- The debounce effect guards with `pt.noteId !== note?.id` to skip any stale fire for a note that was already flushed.
+- Double-save is impossible: after the switch flush, `pendingTitleRef.current = null`, so the debounce effect exits early on its next fire.
+
+**Result:** No matter how fast the user switches, unsaved changes are always flushed to the correct note immediately on switch. The editor instantly shows the new note (synchronous read from store — no loading state).
 
 ---
 
@@ -229,9 +252,11 @@ View changes trigger store refetch via `useEffect([view])`.
 - `onNoteSyncError: (id: string) => void`
 
 **Internal changes:**
-- Remove `fetch(/api/notes/:id)` and loading state
-- Add `pendingSaveRef` for edit attribution
-- Debounced save reads from `pendingSaveRef`, not from component state closures
+- Remove `fetch(/api/notes/:id)` and loading state — note arrives synchronously from store prop
+- Two pending refs (`pendingTitleRef`, `pendingContentRef`) capture `(noteId, value)` at keystroke time
+- `useEffect([note?.id])` flushes pending refs for the previous note before loading the new one
+- Debounce effects guard with `pt.noteId !== note?.id` to skip stale fires after a switch
+- `contentText` state removed — `text` is captured directly from the `onChange` callback parameter into `pendingContentRef`
 
 ---
 
