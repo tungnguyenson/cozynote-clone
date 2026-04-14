@@ -52,6 +52,7 @@ export default function NoteEditorPanel({
   const [notebookId, setNotebookId] = useState<string>("");
   const [shareUrl, setShareUrl] = useState<string | null>(null);
   const [showShareModal, setShowShareModal] = useState(false);
+  const [showTrashConfirm, setShowTrashConfirm] = useState(false);
   const [isPinned, setIsPinned] = useState(false);
 
   // Refs tracking the latest unsaved edit — capture (noteId + value) at keystroke time.
@@ -179,6 +180,7 @@ export default function NoteEditorPanel({
 
   async function moveToTrash() {
     if (!note) return;
+    setShowTrashConfirm(false);
     await flushSave(note.id, {
       is_deleted: true,
       deleted_at: new Date().toISOString(),
@@ -248,7 +250,7 @@ export default function NoteEditorPanel({
             📌
           </button>
           <button
-            onClick={moveToTrash}
+            onClick={() => setShowTrashConfirm(true)}
             className="p-2 rounded cursor-pointer hover:bg-gray-100 text-gray-400"
             title="Move to trash"
           >
@@ -272,6 +274,34 @@ export default function NoteEditorPanel({
       <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
         <QuillEditor value={content} onChange={handleContentChange} />
       </div>
+
+      {showTrashConfirm && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+          onClick={(e) => { if (e.target === e.currentTarget) setShowTrashConfirm(false); }}
+        >
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm mx-4 p-6">
+            <h2 className="text-lg font-bold text-gray-900 mb-1">Move to Trash?</h2>
+            <p className="text-sm text-gray-500 mb-6">
+              &ldquo;{note.title || "Untitled"}&rdquo; will be moved to trash. You can restore it later.
+            </p>
+            <div className="flex items-center justify-end gap-3">
+              <button
+                onClick={() => setShowTrashConfirm(false)}
+                className="text-sm text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={moveToTrash}
+                className="text-sm font-medium bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors"
+              >
+                Move to Trash
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {showShareModal && (
         <ShareNoteModal
