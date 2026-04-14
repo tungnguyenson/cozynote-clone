@@ -2,15 +2,18 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import dynamic from "next/dynamic";
-import type { Note } from "@/lib/types";
+import type { Note, Notebook, Tag } from "@/lib/types";
 
 const QuillEditor = dynamic(() => import("./QuillEditor"), { ssr: false });
 
 interface NoteEditorPanelProps {
   noteId: string | null;
+  notebooks: Notebook[];
+  tags: Tag[];
   onBack: () => void;
   onNoteUpdated: () => void;
   onDeleteNote: (id: string) => void;
+  onTitleChange?: (id: string, title: string) => void;
 }
 
 function useDebounce<T>(value: T, delay: number): T {
@@ -24,14 +27,17 @@ function useDebounce<T>(value: T, delay: number): T {
 
 export default function NoteEditorPanel({
   noteId,
+  notebooks,
   onBack,
   onNoteUpdated,
   onDeleteNote,
+  onTitleChange,
 }: NoteEditorPanelProps) {
   const [note, setNote] = useState<Note | null>(null);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [contentText, setContentText] = useState("");
+  const [notebookId, setNotebookId] = useState<string>("");
   const [shareUrl, setShareUrl] = useState<string | null>(null);
   const [sharing, setSharing] = useState(false);
 
@@ -41,7 +47,6 @@ export default function NoteEditorPanel({
   const lastSavedTitle = useRef("");
   const lastSavedContent = useRef("");
 
-  // Load note when noteId changes
   useEffect(() => {
     if (!noteId) { setNote(null); return; }
     fetch(`/api/notes/${noteId}`)
@@ -51,6 +56,7 @@ export default function NoteEditorPanel({
         setTitle(n.title);
         setContent(n.content);
         setContentText(n.content_text);
+        setNotebookId(n.notebook_id ?? "");
         lastSavedTitle.current = n.title;
         lastSavedContent.current = n.content;
         setShareUrl(n.is_public && n.public_slug ? `/notes/${n.public_slug}` : null);
@@ -72,19 +78,22 @@ export default function NoteEditorPanel({
     [noteId, onNoteUpdated]
   );
 
-  // Auto-save title
   useEffect(() => {
     if (!noteId || debouncedTitle === lastSavedTitle.current) return;
     lastSavedTitle.current = debouncedTitle;
     save({ title: debouncedTitle });
   }, [debouncedTitle, noteId, save]);
 
-  // Auto-save content
   useEffect(() => {
     if (!noteId || debouncedContent === lastSavedContent.current) return;
     lastSavedContent.current = debouncedContent;
     save({ content: debouncedContent, content_text: contentText });
   }, [debouncedContent, noteId, save, contentText]);
+
+  async function handleNotebookChange(newNotebookId: string) {
+    setNotebookId(newNotebookId);
+    await save({ notebook_id: newNotebookId || null });
+  }
 
   async function togglePin() {
     if (!note) return;
@@ -120,7 +129,7 @@ export default function NoteEditorPanel({
 
   if (!noteId) {
     return (
-      <div className="flex-1 flex items-center justify-center text-gray-400 text-sm">
+      <div className="flex-1 flex items-center justify-center text-gray-400 p-4 text-center">
         Select a note or create a new one
       </div>
     );
@@ -135,69 +144,104 @@ export default function NoteEditorPanel({
   }
 
   return (
-    <div className="flex-1 flex flex-col min-w-0 h-full">
+    <div className="flex-1 flex flex-col h-full min-w-0">
       {/* Mobile back button */}
       <button
         onClick={onBack}
-        className="md:hidden p-3 border-b border-gray-200 text-left text-evernote-green text-sm"
+        className="md:hidden p-3 border-b border-gray-200 text-left text-evernote-green"
       >
         ← Back to notes
       </button>
 
-      {/* Toolbar row */}
-      <div className="flex items-center gap-2 px-4 py-2 border-b border-gray-200 bg-gray-50 flex-shrink-0">
-        <button
-          onClick={togglePin}
-          title={note.is_pinned ? "Unpin" : "Pin"}
-          className={`text-sm px-2 py-1 rounded hover:bg-gray-200 transition ${
-            note.is_pinned ? "text-evernote-green" : "text-gray-400"
-          }`}
-        >
-          📌
-        </button>
-        <button
-          onClick={toggleShare}
-          disabled={sharing}
-          className="text-sm px-2 py-1 rounded hover:bg-gray-200 transition text-gray-500"
-        >
-          🔗 {shareUrl ? "Unshare" : "Share"}
-        </button>
-        {shareUrl && (
-          <button
-            onClick={() => navigator.clipboard.writeText(window.location.origin + shareUrl)}
-            className="text-xs text-evernote-green underline truncate max-w-xs"
-          >
-            {window.location.origin + shareUrl}
-          </button>
-        )}
-        <div className="flex-1" />
-        <button
-          onClick={moveToTrash}
-          className="text-sm px-2 py-1 rounded hover:bg-red-50 text-gray-400 hover:text-red-500 transition"
-        >
-          🗑️
-        </button>
-      </div>
+      {/* Toolbar */}
+      <div className="border-b border-gray-200 p-2 md:p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+          {/* Left: notebook select + share URL */}
+          <div className="flex items-center gap-2 md:gap-4 flex-1 overflow-x-auto">
+            <select
+              value={notebookId}
+              onChange={(e) => handleNotebookChange(e.target.value)}
+              className="border border-gray-200 rounded px-2 py-1 text-sm shrink-0"
+            >
+              <option value="">No notebook</option>
+              {notebooks.map((nb) => (
+                <option key={nb.id} value={nb.id}>
+                  {nb.name}
+                </option>
+              ))}
+            </select>
+            <div className="flex gap-1 flex-wrap">
+              {shareUrl && (
+                <button
+                  onClick={() =>
+                    navigator.clipboard.writeText(window.location.origin + shareUrl)
+                  }
+                  className="text-xs text-evernote-green underline truncate max-w-xs"
+                >
+                  {window.location.origin + shareUrl}
+                </button>
+              )}
+            </div>
+          </div>
 
-      {/* Title */}
-      <input
-        type="text"
-        placeholder="Note title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        className="px-4 py-3 text-lg font-semibold text-gray-900 border-b border-gray-200 focus:outline-none focus:border-evernote-green flex-shrink-0"
-      />
+          {/* Right: action buttons */}
+          <div className="flex items-center gap-1 md:gap-2 flex-wrap">
+            <button
+              className="p-2 rounded hover:bg-gray-100 text-gray-400"
+              title="Manage collaborators"
+            >
+              👥
+            </button>
+            <button
+              onClick={toggleShare}
+              disabled={sharing}
+              className="p-2 rounded hover:bg-gray-100 text-gray-400"
+              title={shareUrl ? "Unshare note" : "Share note"}
+            >
+              🔗
+            </button>
+            <button
+              onClick={togglePin}
+              title={note.is_pinned ? "Unpin" : "Pin"}
+              className={`p-2 rounded hover:bg-gray-100 ${
+                note.is_pinned ? "text-evernote-green" : "text-gray-400"
+              }`}
+            >
+              📌
+            </button>
+            <button
+              onClick={moveToTrash}
+              className="p-2 rounded hover:bg-gray-100 text-gray-400"
+              title="Move to trash"
+            >
+              🗑️
+            </button>
+          </div>
+        </div>
 
-      {/* Quill editor */}
-      <div className="flex-1 overflow-hidden flex flex-col">
-        <QuillEditor
-          value={content}
-          onChange={(html, text) => {
-            setContent(html);
-            setContentText(text);
-          }}
-        />
-      </div>
+        {/* Title */}
+        <div className="p-4 border-b border-gray-200">
+          <input
+            type="text"
+            placeholder="Note title"
+            value={title}
+            onChange={(e) => {
+              setTitle(e.target.value);
+              if (noteId) onTitleChange?.(noteId, e.target.value);
+            }}
+            className="w-full text-2xl font-bold focus:outline-none"
+          />
+        </div>
+
+        {/* Quill editor */}
+        <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
+          <QuillEditor
+            value={content}
+            onChange={(html, text) => {
+              setContent(html);
+              setContentText(text);
+            }}
+          />
+        </div>
     </div>
   );
 }

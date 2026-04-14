@@ -29,8 +29,12 @@ export default function QuillEditor({ value, onChange }: QuillEditorProps) {
   useEffect(() => {
     if (!containerRef.current || quillRef.current) return;
 
+    let destroyed = false;
+
     // Dynamic import to avoid SSR
     import("quill").then(({ default: QuillClass }) => {
+      if (destroyed) return;
+
       import("quill/dist/quill.snow.css");
 
       const quill = new QuillClass(containerRef.current!, {
@@ -54,7 +58,11 @@ export default function QuillEditor({ value, onChange }: QuillEditorProps) {
     });
 
     return () => {
+      destroyed = true;
       quillRef.current = null;
+      if (containerRef.current) {
+        containerRef.current.innerHTML = "";
+      }
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -69,9 +77,5 @@ export default function QuillEditor({ value, onChange }: QuillEditorProps) {
     }
   }, [value]);
 
-  return (
-    <div className="flex flex-col flex-1 min-h-0">
-      <div ref={containerRef} className="flex-1 overflow-y-auto" />
-    </div>
-  );
+  return <div ref={containerRef} className="flex-1 min-h-0 h-full border-none text-xl" />;
 }

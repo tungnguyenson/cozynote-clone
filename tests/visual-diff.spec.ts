@@ -73,7 +73,7 @@ async function capture(
     await page.keyboard.press("Escape");
     await page.waitForTimeout(400);
 
-    await page.screenshot({ path: outPath, fullPage: false });
+    await page.screenshot({ path: outPath, fullPage: true });
   } finally {
     await page.close();
   }

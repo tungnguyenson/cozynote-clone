@@ -18,6 +18,10 @@ export default function AppPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
+  const [optimisticTitle, setOptimisticTitle] = useState<{ id: string; title: string } | null>(null);
+
+  // Clear optimistic title whenever the selected note changes
+  useEffect(() => { setOptimisticTitle(null); }, [selectedId]);
 
   // Verify session on mount
   useEffect(() => {
@@ -116,6 +120,7 @@ export default function AppPage() {
             setSidebarOpen(false);
           }}
           refreshKey={refreshKey}
+          optimisticTitle={optimisticTitle}
         />
       </div>
 
@@ -123,8 +128,11 @@ export default function AppPage() {
       <div className={`flex-1 flex min-w-0 ${!selectedId && "hidden md:flex"}`}>
         <NoteEditorPanel
           noteId={selectedId}
+          notebooks={notebooks}
+          tags={tags}
           onBack={() => setSelectedId(null)}
           onNoteUpdated={() => setRefreshKey((k) => k + 1)}
+          onTitleChange={(id, title) => setOptimisticTitle({ id, title })}
           onDeleteNote={handleNoteDeleted}
         />
       </div>

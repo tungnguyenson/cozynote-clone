@@ -28,20 +28,22 @@ export default function NoteCard({
   return (
     <div
       onClick={onClick}
-      className={`p-4 border-b border-gray-200 cursor-pointer transition ${
-        selected ? "bg-white border-l-2 border-l-evernote-green" : "hover:bg-gray-100"
+      className={`p-4 border-b border-gray-200 cursor-pointer hover:bg-gray-100 ${
+        selected ? "bg-green-50 border-l-4 border-l-evernote-green" : ""
       }`}
     >
-      <div className="flex items-start gap-1 mb-1">
-        {note.is_pinned && <span className="text-xs mt-0.5">📌</span>}
-        <p className="text-sm font-semibold text-gray-900 truncate flex-1">
+      <div className="flex items-center gap-2">
+        {note.is_pinned && <span>📌</span>}
+        <h3 className="font-medium truncate flex-1">
           {note.title || "Untitled"}
-        </p>
+        </h3>
       </div>
-      <p className="text-xs text-gray-400 line-clamp-2 mb-1">
+      <p className="text-sm text-gray-500 truncate mt-1">
         {note.content_text || "No content"}
       </p>
-      <p className="text-xs text-gray-400">{formatDate(note.updated_at)}</p>
+      <div className="flex items-center gap-2 mt-2 text-xs text-gray-400">
+        <span>{formatDate(note.updated_at)}</span>
+      </div>
 
       {trashMode && (
         <div className="flex gap-2 mt-2" onClick={(e) => e.stopPropagation()}>

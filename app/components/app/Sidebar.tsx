@@ -20,9 +20,9 @@ interface SidebarProps {
 
 function navItemClass(active: boolean) {
   return (
-    "px-4 py-2 cursor-pointer transition text-sm " +
+    "px-4 py-2 cursor-pointer " +
     (active
-      ? "bg-evernote-hover text-evernote-green"
+      ? "hover:bg-evernote-hover bg-evernote-hover text-evernote-green"
       : "hover:bg-evernote-hover text-gray-300")
   );
 }
@@ -95,32 +95,32 @@ export default function Sidebar({
   const isView = (v: AppView) => JSON.stringify(view) === JSON.stringify(v);
 
   return (
-    <div className="w-64 bg-evernote-sidebar text-white flex flex-col h-full flex-shrink-0">
+    <div className="w-64 bg-evernote-sidebar text-white flex flex-col h-full">
       {/* Header */}
       <div className="p-4 border-b border-gray-700">
         <div className="flex items-center justify-between mb-1">
-          <button
+          <span
             onClick={() => router.push("/profile")}
-            className="font-semibold hover:text-evernote-green truncate text-left"
+            className="font-semibold cursor-pointer hover:text-evernote-green truncate"
           >
             {userName || "User"}
-          </button>
+          </span>
           <button
             onClick={logout}
-            className="text-sm text-gray-400 hover:text-white flex-shrink-0 ml-2"
+            className="text-sm text-gray-400 hover:text-white shrink-0 ml-2"
           >
             Logout
           </button>
         </div>
         <div className="flex items-center gap-2 mb-3">
           <span className="text-xs text-gray-400 truncate">{workspaceName}</span>
-          <span className="text-xs px-1.5 py-0.5 rounded bg-gray-600 text-gray-300 flex-shrink-0">
+          <span className="text-xs px-1.5 py-0.5 rounded shrink-0 bg-gray-600 text-gray-300">
             FREE
           </span>
         </div>
         <button
           onClick={onNewNote}
-          className="w-full bg-evernote-green text-white py-2 rounded hover:bg-green-600 transition text-sm font-medium"
+          className="w-full bg-evernote-green text-white py-2 rounded hover:bg-green-600 transition"
         >
           + New Note
         </button>
@@ -162,9 +162,9 @@ export default function Sidebar({
             <input
               ref={nbInputRef}
               placeholder="New notebook"
-              className="flex-1 bg-evernote-dark text-white px-2 py-1 rounded text-xs focus:outline-none"
+              className="flex-1 bg-evernote-dark text-white px-2 py-1 rounded text-sm"
             />
-            <button type="submit" className="text-evernote-green font-bold">
+            <button type="submit" className="text-evernote-green">
               +
             </button>
           </form>
@@ -185,9 +185,9 @@ export default function Sidebar({
             <input
               ref={tagInputRef}
               placeholder="New tag"
-              className="flex-1 bg-evernote-dark text-white px-2 py-1 rounded text-xs focus:outline-none"
+              className="flex-1 bg-evernote-dark text-white px-2 py-1 rounded text-sm"
             />
-            <button type="submit" className="text-evernote-green font-bold">
+            <button type="submit" className="text-evernote-green">
               +
             </button>
           </form>

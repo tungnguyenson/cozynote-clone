@@ -8,6 +8,8 @@ const plans = [
       "2 notebooks",
       "Basic search",
       "1 shared note",
+      "Rich text editor",
+      "Web access",
     ],
     cta: "Get started free",
     href: "/register",
@@ -23,44 +25,41 @@ const plans = [
       "Full-text search",
       "Unlimited sharing",
       "Evernote import",
+      "Rich text editor",
+      "Priority support",
+      "Advanced export",
     ],
     cta: "Start free trial",
     href: "/register",
     highlight: true,
   },
-  {
-    name: "Team",
-    price: "$15",
-    period: "per user / month",
-    features: [
-      "Everything in Pro",
-      "Team workspace",
-      "Collaboration tools",
-      "Priority support",
-    ],
-    cta: "Contact us",
-    href: "/register",
-    highlight: false,
-  },
 ];
 
 export default function PricingSection() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+        <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
           Simple pricing
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <p className="text-gray-500 text-center mb-12 text-lg">
+          Start simply, upgrade when you&apos;re ready.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.name}
               className={`p-8 rounded-xl border ${
                 plan.highlight
-                  ? "border-evernote-green bg-white shadow-lg"
+                  ? "border-evernote-green bg-green-50 shadow-lg"
                   : "border-gray-200 bg-white"
               }`}
             >
+              {plan.highlight && (
+                <div className="text-xs font-semibold text-evernote-green uppercase tracking-wide mb-2">
+                  POPULAR
+                </div>
+              )}
               <div className="text-lg font-semibold text-gray-900 mb-2">
                 {plan.name}
               </div>

@@ -10,6 +10,15 @@ export async function PATCH(request: NextRequest) {
 
   // Password change
   if (body.new_password) {
+    if (body.current_password) {
+      const { error: verifyError } = await supabase.auth.signInWithPassword({
+        email: user.email!,
+        password: body.current_password,
+      });
+      if (verifyError) {
+        return NextResponse.json({ error: "Current password is incorrect" }, { status: 400 });
+      }
+    }
     const { error } = await supabase.auth.updateUser({
       password: body.new_password,
     });

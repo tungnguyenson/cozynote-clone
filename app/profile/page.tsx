@@ -16,19 +16,19 @@ export default async function ProfilePage() {
     .single();
 
   return (
-    <div className="min-h-screen bg-gray-100 flex">
-      {/* Sidebar strip */}
-      <aside className="bg-evernote-sidebar text-white p-4 flex-shrink-0">
+    <div className="min-h-screen bg-gray-100 flex flex-col">
+      {/* Top bar */}
+      <header className="bg-evernote-sidebar text-white px-4 py-4 shrink-0">
         <Link
           href="/app"
-          className="text-gray-300 hover:text-white text-sm whitespace-nowrap"
+          className="text-gray-300 hover:text-white text-sm"
         >
           ← Back to Notes
         </Link>
-      </aside>
+      </header>
 
       {/* Content */}
-      <main className="flex-1 max-w-xl mx-auto py-8 px-4">
+      <main className="flex-1 max-w-xl mx-auto w-full py-8 px-4">
         <h1 className="text-2xl font-bold mb-6">Profile Settings</h1>
         <AccountInfoCard
           email={user.email ?? ""}

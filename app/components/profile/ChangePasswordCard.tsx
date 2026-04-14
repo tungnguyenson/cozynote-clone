@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 export default function ChangePasswordCard() {
+  const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [status, setStatus] = useState("");
 
@@ -12,10 +13,11 @@ export default function ChangePasswordCard() {
     const res = await fetch("/api/profile", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ new_password: newPassword }),
+      body: JSON.stringify({ current_password: currentPassword, new_password: newPassword }),
     });
     if (res.ok) {
       setStatus("Password changed.");
+      setCurrentPassword("");
       setNewPassword("");
     } else {
       const { error } = await res.json();
@@ -27,6 +29,18 @@ export default function ChangePasswordCard() {
     <div className="bg-white rounded-lg shadow p-6">
       <h2 className="text-lg font-semibold mb-4">Change Password</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Current Password
+          </label>
+          <input
+            type="password"
+            value={currentPassword}
+            onChange={(e) => setCurrentPassword(e.target.value)}
+            required
+            className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-evernote-green"
+          />
+        </div>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
             New Password
