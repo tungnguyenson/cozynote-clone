@@ -3,7 +3,7 @@ import Link from "next/link";
 interface AuthCardProps {
   children: React.ReactNode;
   subtitle: string;
-  footer: React.ReactNode;
+  footer?: React.ReactNode;
 }
 
 export default function AuthCard({ children, subtitle, footer }: AuthCardProps) {
